@@ -15,9 +15,10 @@ class Clock extends Component {
     render() {
         const tempo = this.state.date.getTime() + this.props.time * 3600 * 1000;
         const data = new Date(tempo);
-        return <h2>in {this.props.paese} è {data.toLocaleTimeString()}
+        return <li>in {this.props.paese} è <br/>
+            <span className="clock">{data.toLocaleTimeString()}</span><br/>
             <button onClick={this.toggle}>{this.state.stop ? "start" : "stop"}</button>
-        </h2>
+        </li>
     }
 
     toggle=(event) => {
